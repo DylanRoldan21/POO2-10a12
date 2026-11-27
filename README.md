@@ -1,4 +1,4 @@
-# TD-6A8 · Tienda de ropa online (trabajo en equipo con Git)
+
 
 Web de una tienda de ropa dividida en **9 secciones independientes**. Cada alumno trabaja SOLO en sus archivos,
 así al unir las 9 ramas no hay conflictos.
