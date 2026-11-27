@@ -5,7 +5,7 @@
     <h2 class="titulo-seccion">Ofertas de la semana</h2>
     <p class="subtitulo-seccion">Precios especiales por tiempo limitado. ¡Corre que se acaban!</p>
 
-    <!-- CUENTA REGRESIVA: cambia data-fin por la fecha y hora en que termina tu oferta -->
+    <!-- CUENTA REGRESIVA -->
     <div class="a7-contador" data-fin="2026-12-31T23:59:59-05:00">
       <div><span id="a7-dias">00</span><small>Días</small></div>
       <div><span id="a7-horas">00</span><small>Horas</small></div>
@@ -13,65 +13,98 @@
       <div><span id="a7-seg">00</span><small>Seg</small></div>
     </div>
 
-    <!--
-      CÓMO EDITAR UNA OFERTA:
-        data-antes  = precio normal (ej: 249.90)
-        data-precio = precio con descuento (ej: 149.90) -> debe ser MENOR que data-antes
-      El porcentaje (-40%) y los precios visibles los calcula el JavaScript solo.
-    -->
     <div class="grid-productos a7-grid">
-      <article class="producto" data-nombre="Casaca Puffer" data-antes="249.90" data-precio="149.90">
+      <!-- PRODUCTO 1 -->
+      <article class="producto" data-nombre="Casaca Puffer Azul" data-antes="250.00" data-precio="169.90">
         <div class="producto-foto">
-          <img src="img/alumno7/oferta1.svg" alt="Casaca Puffer">
+          <img src="img/alumno7/oferta1.jpg" alt="Casaca Puffer Azul">
           <span class="a7-descuento">-0%</span>
         </div>
         <div class="producto-info">
-          <h3 class="producto-nombre">Casaca Puffer</h3>
+          <h3 class="producto-nombre">Casaca Puffer Azul</h3>
           <div class="a7-precios">
-            <span class="a7-ahora">S/ 149.90</span>
-            <span class="a7-antes">S/ 249.90</span>
+            <span class="a7-ahora">S/ 169.90</span>
+            <span class="a7-antes">S/ 250.00</span>
           </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
-      <article class="producto" data-nombre="Vestido Satinado" data-antes="159.90" data-precio="99.90">
+
+      <!-- PRODUCTO 2 -->
+      <article class="producto" data-nombre="Vestido Elegante Rojo" data-antes="180.00" data-precio="119.90">
         <div class="producto-foto">
-          <img src="img/alumno7/oferta2.svg" alt="Vestido Satinado">
+          <img src="img/alumno7/oferta2.jpg" alt="Vestido Elegante Rojo">
           <span class="a7-descuento">-0%</span>
         </div>
         <div class="producto-info">
-          <h3 class="producto-nombre">Vestido Satinado</h3>
+          <h3 class="producto-nombre">Vestido Elegante Rojo</h3>
           <div class="a7-precios">
-            <span class="a7-ahora">S/ 99.90</span>
-            <span class="a7-antes">S/ 159.90</span>
+            <span class="a7-ahora">S/ 119.90</span>
+            <span class="a7-antes">S/ 180.00</span>
           </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
-      <article class="producto" data-nombre="Zapatillas Retro" data-antes="219.90" data-precio="139.90">
+
+      <!-- PRODUCTO 3 -->
+      <article class="producto" data-nombre="Zapatillas Deportivas" data-antes="299.00" data-precio="199.90">
         <div class="producto-foto">
-          <img src="img/alumno7/oferta3.svg" alt="Zapatillas Retro">
+          <img src="img/alumno7/oferta3.jpg" alt="Zapatillas Deportivas">
           <span class="a7-descuento">-0%</span>
         </div>
         <div class="producto-info">
-          <h3 class="producto-nombre">Zapatillas Retro</h3>
+          <h3 class="producto-nombre">Zapatillas Deportivas</h3>
           <div class="a7-precios">
-            <span class="a7-ahora">S/ 139.90</span>
-            <span class="a7-antes">S/ 219.90</span>
+            <span class="a7-ahora">S/ 199.90</span>
+            <span class="a7-antes">S/ 299.00</span>
           </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
-      <article class="producto" data-nombre="Polera Hoodie" data-antes="119.90" data-precio="69.90">
+
+      <!-- PRODUCTO 4 -->
+      <article class="producto" data-nombre="Polera Hoodie Negra" data-antes="120.00" data-precio="79.90">
         <div class="producto-foto">
-          <img src="img/alumno7/oferta4.svg" alt="Polera Hoodie">
+          <img src="img/alumno7/oferta4.jpg" alt="Polera Hoodie Negra">
           <span class="a7-descuento">-0%</span>
         </div>
         <div class="producto-info">
-          <h3 class="producto-nombre">Polera Hoodie</h3>
+          <h3 class="producto-nombre">Polera Hoodie Negra</h3>
           <div class="a7-precios">
-            <span class="a7-ahora">S/ 69.90</span>
-            <span class="a7-antes">S/ 119.90</span>
+            <span class="a7-ahora">S/ 79.90</span>
+            <span class="a7-antes">S/ 120.00</span>
+          </div>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 5 -->
+      <article class="producto" data-nombre="Pantalón de Lino Rayas" data-antes="130.00" data-precio="89.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/oferta5.jpg" alt="Pantalón de Lino Rayas">
+          <span class="a7-descuento">-0%</span>
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Pantalón de Lino Rayas</h3>
+          <div class="a7-precios">
+            <span class="a7-ahora">S/ 89.90</span>
+            <span class="a7-antes">S/ 130.00</span>
+          </div>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- PRODUCTO 6 -->
+      <article class="producto" data-nombre="Short Deportivo Negro" data-antes="90.00" data-precio="59.90">
+        <div class="producto-foto">
+          <img src="img/alumno7/oferta6.jpg" alt="Short Deportivo Negro">
+          <span class="a7-descuento">-0%</span>
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Short Deportivo Negro</h3>
+          <div class="a7-precios">
+            <span class="a7-ahora">S/ 59.90</span>
+            <span class="a7-antes">S/ 90.00</span>
           </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
