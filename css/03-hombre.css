@@ -1,8 +1,52 @@
 /* ALUMNO 3 - Hombre. Usa SOLO clases que empiecen con .a3- */
-.a3-seccion { background: var(--blanco); }
+.a3-seccion { 
+  background: var(--blanco); 
+}
 
-/* Botones de talla */
-.a3-tallas { display: flex; gap: 6px; }
-.a3-tallas button { width: 36px; height: 34px; border: 1px solid var(--borde); background: #fff; border-radius: 6px; cursor: pointer; font-size: .8rem; transition: .2s; }
-.a3-tallas button:hover { border-color: var(--negro); }
-.a3-tallas button.activo { background: var(--negro); color: #fff; border-color: var(--negro); }
+/* ================= ESTILOS PREMIUM PARA LAS TALLAS ================= */
+.a3-tallas { 
+  display: flex; 
+  gap: 8px; 
+  flex-wrap: wrap; 
+  margin: 5px 0; 
+}
+
+.a3-tallas button { 
+  width: 42px; 
+  height: 38px; 
+  border: 1px solid var(--borde); 
+  background: #fff; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-size: .85rem; 
+  font-weight: 600;
+  color: var(--negro);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+/* Efecto al pasar el mouse */
+.a3-tallas button:hover { 
+  border-color: var(--negro); 
+  transform: translateY(-3px); 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Talla seleccionada */
+.a3-tallas button.activo { 
+  background: var(--negro); 
+  color: #fff; 
+  border-color: var(--negro); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25); 
+  transform: translateY(-3px);
+}
+
+/* ================= DETALLES EXTRA ================= */
+.a3-seccion .producto-precio del {
+  color: var(--gris);
+  font-size: 0.85rem;
+  margin-right: 6px;
+}
+
+.a3-seccion .producto:hover {
+  border-color: var(--acento);
+}
