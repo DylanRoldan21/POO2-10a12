@@ -1,4 +1,4 @@
-// ALUMNO 6 - Filtros, contador de productos, ordenar por precio y carrito
+// ALUMNO 6 - Filtros, contador de productos, ordenar por precio/nombre y carrito
 (() => {
   const seccion = document.getElementById('accesorios');
   const grid = document.getElementById('a6-grid');
@@ -10,7 +10,7 @@
     cantidad.textContent = visibles + (visibles === 1 ? ' producto' : ' productos');
   }
 
-  // ---------- 1. Filtrar ----------
+  // 1. Filtrar
   filtros.forEach(boton => {
     boton.addEventListener('click', () => {
       filtros.forEach(b => b.classList.remove('activo'));
@@ -23,19 +23,20 @@
     });
   });
 
-  // ---------- 2. Ordenar por precio ----------
+  // 2. Ordenar
   document.getElementById('a6-orden').addEventListener('change', (e) => {
     const opcion = e.target.value;
     const lista = [...grid.querySelectorAll('.producto')];
     lista.sort((a, b) => {
       if (opcion === 'menor') return a.dataset.precio - b.dataset.precio;
       if (opcion === 'mayor') return b.dataset.precio - a.dataset.precio;
+      if (opcion === 'nombre') return a.dataset.nombre.localeCompare(b.dataset.nombre);
       return a.dataset.orden - b.dataset.orden;
     });
-    lista.forEach(p => grid.appendChild(p)); // los vuelve a colocar en el nuevo orden
+    lista.forEach(p => grid.appendChild(p));
   });
 
-  // ---------- 3. Agregar al carrito ----------
+  // 3. Agregar al carrito
   seccion.querySelectorAll('.btn-agregar').forEach(boton => {
     boton.addEventListener('click', () => {
       const producto = boton.closest('.producto');
