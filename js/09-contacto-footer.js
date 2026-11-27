@@ -1,42 +1,90 @@
-// ALUMNO 9 - Formulario a WhatsApp, newsletter y año del footer
-(() => {
-  const NUMERO_WHATSAPP = '51999999999'; // 51 = Perú + número de 9 dígitos (sin espacios)
+// ==========================================
+// ALUMNO 9: LÓGICA DE CONTACTO, NEWSLETTER Y FOOTER
+// ==========================================
 
-  // ---------- 1. Formulario de contacto -> WhatsApp ----------
-  const form = document.getElementById('a9-form');
-  const error = document.getElementById('a9-error');
+// 1. DEFINIR EL NÚMERO DE WHATSAPP (Obligatorio)
+// Reemplaza este número por el que te hayan asignado en tu tarea
+const NUMERO_WHATSAPP = "+51987654321"; 
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nombre = document.getElementById('a9-nombre').value.trim();
-    const celular = document.getElementById('a9-celular').value.trim();
-    const motivo = document.getElementById('a9-motivo').value;
-    const mensaje = document.getElementById('a9-mensaje').value.trim();
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- LÓGICA DEL FORMULARIO DE CONTACTO Y WHATSAPP ---
+    const formContacto = document.getElementById("a9-formulario-contacto");
+    const btnWhatsapp = document.getElementById("a9-btn-whatsapp");
 
-    // Validaciones
-    if (nombre.length < 3) { error.textContent = 'Escribe tu nombre completo.'; return; }
-    if (!/^9\d{8}$/.test(celular)) { error.textContent = 'El celular debe tener 9 dígitos y empezar con 9.'; return; }
-    if (mensaje.length < 5) { error.textContent = 'Escribe tu mensaje.'; return; }
-    error.textContent = '';
+    // Función que se ejecuta al hacer clic en "Enviar mensaje"
+    if (formContacto) {
+        formContacto.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que la página se recargue
 
-    const texto = `Hola, soy ${nombre} (cel. ${celular}).\nMotivo: ${motivo}\n${mensaje}`;
-    window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank');
-    form.reset();
-  });
+            // Obtener los valores de los campos
+            const nombre = document.getElementById("a9-nombre").value.trim();
+            const celular = document.getElementById("a9-celular").value.trim();
+            const motivo = document.getElementById("a9-motivo").value;
+            const mensaje = document.getElementById("a9-mensaje").value.trim();
 
-  // ---------- 2. Newsletter ----------
-  document.getElementById('a9-suscribir').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const correo = document.getElementById('a9-correo');
-    const valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value.trim());
-    if (!valido) {
-      mostrarToast('⚠️ Escribe un correo válido');
-      return;
+            // TAREA 4: VALIDACIONES
+            if (nombre === "") {
+                alert("Por favor, ingresa tu nombre.");
+                return;
+            }
+            // Validar que el celular tenga exactamente 9 dígitos
+            if (celular.length !== 9 || isNaN(celular)) {
+                alert("El número de celular debe tener exactamente 9 dígitos numéricos.");
+                return;
+            }
+            if (motivo === "") {
+                alert("Por favor, selecciona un motivo de contacto.");
+                return;
+            }
+            if (mensaje === "") {
+                alert("Por favor, escribe tu mensaje.");
+                return;
+            }
+
+            // Si todo está bien, construimos el enlace de WhatsApp
+            const textoWhatsApp = `Hola, soy ${nombre}. Mi celular es ${celular}. Motivo: ${motivo}. Mensaje: ${mensaje}`;
+            const urlWhatsApp = `https://wa.me/${NUMERO_WHATSAPP.replace('+', '')}?text=${encodeURIComponent(textoWhatsApp)}`;
+            
+            // Abrimos WhatsApp en una nueva pestaña
+            window.open(urlWhatsApp, '_blank');
+            
+            alert("¡Redirigiendo a WhatsApp!");
+            formContacto.reset(); // Limpiamos el formulario
+        });
     }
-    mostrarToast('🎉 ¡Gracias! Tu código es BIENVENIDO10');
-    correo.value = '';
-  });
 
-  // ---------- 3. Año automático en el footer ----------
-  document.getElementById('a9-anio').textContent = new Date().getFullYear();
-})();
+    // --- LÓGICA DEL BOTÓN FLOTANTE DE WHATSAPP ---
+    // Esto hace que si hacen clic directo en el botón flotante, también funcione
+    if (btnWhatsapp) {
+        btnWhatsapp.addEventListener("click", function(event) {
+            event.preventDefault();
+            const urlWhatsApp = `https://wa.me/${NUMERO_WHATSAPP.replace('+', '')}?text=Hola, me gustaría más información sobre la tienda.`;
+            window.open(urlWhatsApp, '_blank');
+        });
+    }
+
+    // --- LÓGICA DEL NEWSLETTER ---
+    const formNewsletter = document.getElementById("a9-form-newsletter");
+    
+    if (formNewsletter) {
+        formNewsletter.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita recargar la página
+            
+            const email = document.getElementById("a9-email-newsletter").value.trim();
+            
+            // TAREA: Validación básica de correo
+            // Busca que tenga un "@" y un "."
+            const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            
+            if (!emailValido) {
+                alert("Por favor, ingresa un correo electrónico válido.");
+                return;
+            }
+
+            // TAREA 5: Mensaje de éxito
+            alert(`¡Gracias por suscribirte! Usa el código TIENDA10 para obtener tu descuento.`);
+            formNewsletter.reset(); // Limpiamos el campo
+        });
+    }
+});
