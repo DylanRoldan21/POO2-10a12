@@ -3,14 +3,22 @@
   const seccion = document.getElementById('ofertas');
   const productos = seccion.querySelectorAll('.producto');
 
-  // ---------- 1. Calcular el % de descuento de cada producto ----------
+  // ---------- 1. Calcular el % de descuento y el AHORRO (Reto Extra) ----------
   productos.forEach(p => {
     const antes = Number(p.dataset.antes);
     const ahora = Number(p.dataset.precio);
     const porcentaje = Math.round((1 - ahora / antes) * 100);
+    
     p.querySelector('.a7-descuento').textContent = '-' + porcentaje + '%';
     p.querySelector('.a7-antes').textContent = 'S/ ' + antes.toFixed(2);
     p.querySelector('.a7-ahora').textContent = 'S/ ' + ahora.toFixed(2);
+
+    // Calcular cuánto se ahorra el cliente
+    const ahorro = antes - ahora;
+    const spanAhorro = document.createElement('span');
+    spanAhorro.classList.add('a7-ahorro');
+    spanAhorro.textContent = `Ahorras S/ ${ahorro.toFixed(2)}`;
+    p.querySelector('.a7-precios').appendChild(spanAhorro);
   });
 
   // ---------- 2. Cuenta regresiva ----------
@@ -21,8 +29,8 @@
   function actualizar() {
     const falta = fin - Date.now();
     if (falta <= 0) {
-      contador.innerHTML = '<p style="font-size:1.3rem">⏰ ¡La oferta terminó!</p>';
-      seccion.querySelectorAll('.btn-agregar').forEach(b => { b.disabled = true; b.textContent = 'Oferta terminada'; });
+      contador.innerHTML = '<p style="font-size:1.3rem; color:#fff;">⏰ ¡La oferta terminó!</p>';
+      seccion.querySelectorAll('.btn-agregar').forEach(b => { b.disabled = true; b.textContent = 'Oferta terminada'; b.style.background = '#555'; });
       clearInterval(intervalo);
       return;
     }
