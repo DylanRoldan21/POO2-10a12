@@ -1,57 +1,144 @@
-/* ALUMNO 1 - Header + Banner + Carrito. Usa SOLO clases que empiecen con .a1- */
+/* ALUMNO 1 - Header + Banner + Carrito (NIVEL DIOS) */
 
-/* Barra de anuncio */
-.a1-anuncio { background: var(--negro); color: var(--blanco); text-align: center; font-size: .75rem; letter-spacing: 2px; padding: 8px 10px; }
+/* 1. MARQUESINA (Barra de anuncio) */
+.a1-anuncio { 
+  background: linear-gradient(90deg, #7b1c2e, #b92b46); 
+  color: #fff; overflow: hidden; white-space: nowrap; padding: 10px 0;
+}
+.a1-anuncio p {
+  display: inline-block; padding-left: 100%;
+  animation: a1-marquee 20s linear infinite; margin: 0;
+  font-size: .75rem; font-weight: 600; letter-spacing: 2px;
+}
+@keyframes a1-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-/* Menú */
-.a1-header { position: sticky; top: 0; z-index: 60; background: rgba(255, 255, 255, .97); border-bottom: 1px solid var(--borde); }
-.a1-nav { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 20px; position: relative; }
-.a1-logo { font-family: var(--fuente-titulo); font-size: 1.6rem; font-weight: 700; letter-spacing: 2px; }
+/* 2. HEADER CON CRISTAL Y BOTÓN DE TEMA */
+.a1-header { 
+  position: sticky; top: 0; z-index: 60; 
+  background: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(15px); 
+  border-bottom: 1px solid rgba(0,0,0,0.05); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03); 
+  transition: background 0.3s, color 0.3s;
+}
+.a1-nav { display: flex; align-items: center; justify-content: space-between; height: 80px; gap: 20px; position: relative; }
+
+.a1-logo { 
+  font-family: var(--fuente-titulo); font-size: 2.2rem; font-weight: 700; 
+  letter-spacing: 2px; transition: transform 0.3s;
+  animation: a1-pulse 3s infinite;
+}
+@keyframes a1-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+.a1-logo:hover { transform: scale(1.08) rotate(-2deg); animation: none; }
 .a1-logo span { color: var(--acento); font-style: italic; margin-left: 6px; }
-.a1-links { display: flex; gap: 26px; }
-.a1-links a { font-size: .82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; position: relative; }
-.a1-links a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--negro); transition: .25s; }
+
+.a1-links { display: flex; gap: 30px; }
+.a1-links a { font-size: .85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; position: relative; color: #333; }
+.a1-links a::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background: var(--negro); transition: .3s ease; }
 .a1-links a:hover::after { width: 100%; }
 .a1-links .a1-rojo { color: var(--rojo); }
-.a1-menu-btn { display: none; background: none; border: 0; font-size: 1.5rem; cursor: pointer; }
 
-/* Botón del carrito */
-.a1-carrito-btn { position: relative; background: none; border: 0; font-size: 1.4rem; cursor: pointer; }
-.a1-contador { position: absolute; top: -6px; right: -12px; background: var(--rojo); color: #fff; font-size: .7rem; font-weight: 700; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 999px; display: grid; place-items: center; }
+/* Botón de modo oscuro */
+.a1-tema-btn { background: none; border: 0; font-size: 1.4rem; cursor: pointer; transition: transform 0.3s; }
+.a1-tema-btn:hover { transform: rotate(20deg) scale(1.1); }
 
-/* Panel del carrito */
-.a1-panel { position: fixed; top: 0; right: 0; width: min(380px, 90vw); height: 100vh; background: #fff; box-shadow: -10px 0 30px rgba(0, 0, 0, .15); transform: translateX(105%); transition: .35s; z-index: 100; display: flex; flex-direction: column; padding: 24px; }
+.a1-carrito-btn { 
+  position: relative; background: none; border: 0; font-size: 1.6rem; cursor: pointer; 
+  transition: transform 0.3s;
+}
+.a1-carrito-btn:hover { transform: scale(1.1); }
+.a1-contador { 
+  position: absolute; top: -8px; right: -12px; 
+  background: var(--rojo); color: #fff; font-size: .75rem; font-weight: 800; 
+  min-width: 22px; height: 22px; border-radius: 999px; display: grid; place-items: center;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.5);
+}
+/* Animación de salto del contador */
+.a1-contador.a1-bump { animation: a1-bump 0.4s ease; }
+@keyframes a1-bump { 0% { transform: scale(1); } 50% { transform: scale(1.5); background: #ffcc00; color: #000; } 100% { transform: scale(1); } }
+
+/* 3. PANEL DEL CARRITO */
+.a1-panel { 
+  position: fixed; top: 0; right: 0; width: min(400px, 90vw); height: 100vh; 
+  background: #fff; box-shadow: -20px 0 50px rgba(0,0,0,0.2); 
+  transform: translateX(105%); transition: transform .4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  z-index: 100; display: flex; flex-direction: column; padding: 30px; 
+}
 .a1-panel.abierto { transform: none; }
-.a1-panel-cabecera { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--borde); padding-bottom: 14px; }
-.a1-panel-cabecera h3 { font-family: var(--fuente-titulo); font-size: 1.4rem; }
-.a1-cerrar { background: none; border: 0; font-size: 1.3rem; cursor: pointer; }
-.a1-lista { list-style: none; flex: 1; overflow-y: auto; margin: 16px 0; }
-.a1-lista li { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px dashed var(--borde); font-size: .9rem; }
-.a1-lista li.a1-vacio { color: var(--gris); justify-content: center; border: 0; }
-.a1-total { font-size: 1.1rem; margin-bottom: 14px; }
-.a1-comprar { text-align: center; }
+.a1-panel-cabecera { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--borde); padding-bottom: 20px; }
+.a1-panel-cabecera h3 { font-family: var(--fuente-titulo); font-size: 1.6rem; }
+.a1-cerrar { background: none; border: 0; font-size: 1.5rem; cursor: pointer; transition: transform 0.3s; }
+.a1-cerrar:hover { transform: rotate(90deg); }
+.a1-lista { list-style: none; flex: 1; overflow-y: auto; margin: 20px 0; }
+.a1-lista li { display: flex; justify-content: space-between; gap: 10px; padding: 15px 0; border-bottom: 1px dashed var(--borde); font-size: .95rem; }
+.a1-lista li.a1-vacio { color: var(--gris); justify-content: center; border: 0; padding: 40px 0; }
+.a1-total { font-size: 1.3rem; margin-bottom: 20px; border-top: 2px solid var(--negro); padding-top: 15px; }
+.a1-comprar { text-align: center; padding: 15px; font-size: 1.1rem; }
 
-/* Banner */
-.a1-banner { position: relative; height: min(80vh, 680px); min-height: 460px; overflow: hidden; background: var(--negro); }
-.a1-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s; }
-.a1-slide.activo { opacity: 1; z-index: 1; }
-.a1-slide img { width: 100%; height: 100%; object-fit: cover; }
-.a1-slide::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, .65), transparent 70%); }
-.a1-texto { position: absolute; z-index: 2; left: 8%; top: 50%; transform: translateY(-50%); color: #fff; max-width: 520px; }
-.a1-mini { letter-spacing: 4px; font-size: .8rem; font-weight: 600; color: var(--beige); }
-.a1-texto h1 { font-family: var(--fuente-titulo); font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1.05; margin: 10px 0 16px; }
-.a1-texto p { margin-bottom: 26px; opacity: .9; }
-.a1-flecha { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .85); font-size: 1.6rem; cursor: pointer; }
-.a1-prev { left: 20px; }
-.a1-next { right: 20px; }
-.a1-puntos { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 10px; }
-.a1-puntos button { width: 12px; height: 12px; border-radius: 50%; border: 2px solid #fff; background: transparent; cursor: pointer; }
-.a1-puntos button.activo { background: #fff; }
+/* 4. BANNER CON EFECTO CORTINA Y ZOOM */
+.a1-banner { 
+  position: relative; height: min(85vh, 800px); min-height: 500px; overflow: hidden; background: #000; 
+}
+.a1-slide { 
+  position: absolute; inset: 0; opacity: 0; transform: translateX(100%);
+  transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+.a1-slide.activo { opacity: 1; z-index: 1; transform: translateX(0); }
 
-/* Celular */
+.a1-slide img { 
+  width: 100%; height: 100%; object-fit: cover; object-position: center; 
+  image-rendering: -webkit-optimize-contrast;
+  filter: contrast(1.1) saturate(1.2) brightness(0.9);
+  transform: scale(1.1); 
+  transition: transform 8s ease-out; 
+}
+.a1-slide.activo img { transform: scale(1); }
+
+.a1-slide::after { 
+  content: ''; position: absolute; inset: 0; 
+  background: linear-gradient(90deg, rgba(0, 0, 0, .85) 0%, transparent 60%); 
+}
+
+.a1-texto { 
+  position: absolute; z-index: 2; left: 8%; top: 50%; transform: translateY(-50%); 
+  color: #fff; max-width: 550px; 
+  animation: a1-textReveal 1.2s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+@keyframes a1-textReveal { from { opacity: 0; transform: translateY(-30%); } to { opacity: 1; transform: translateY(-50%); } }
+
+.a1-mini { letter-spacing: 5px; font-size: .9rem; font-weight: 700; color: var(--beige); text-transform: uppercase; }
+.a1-texto h1 { font-family: var(--fuente-titulo); font-size: clamp(3rem, 7vw, 5.5rem); line-height: 1.05; margin: 15px 0 20px; text-shadow: 2px 4px 20px rgba(0,0,0,0.6); }
+.a1-texto p { margin-bottom: 30px; font-size: 1.1rem; opacity: .95; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); }
+
+/* Flechas y puntos */
+.a1-flecha { 
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; 
+  width: 55px; height: 55px; border-radius: 50%; border: 0; 
+  background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(5px); color: #fff;
+  font-size: 2rem; cursor: pointer; transition: all 0.3s; display: grid; place-items: center;
+}
+.a1-flecha:hover { background: rgba(255, 255, 255, 0.9); color: #000; transform: translateY(-50%) scale(1.1); }
+.a1-prev { left: 30px; }
+.a1-next { right: 30px; }
+
+.a1-puntos { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 3; display: flex; gap: 12px; }
+.a1-puntos button { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; background: transparent; cursor: pointer; transition: all 0.3s; }
+.a1-puntos button.activo { background: #fff; transform: scale(1.3); }
+
+/* 5. MODO OSCURO (Se activa con el botón) */
+body.dark-mode { background-color: #121212; color: #fff; }
+body.dark-mode .a1-header { background: rgba(18, 18, 18, 0.85); border-color: #333; }
+body.dark-mode .a1-links a { color: #ddd; }
+body.dark-mode .a1-links a::after { background: #fff; }
+body.dark-mode .a1-panel { background: #1e1e1e; color: #fff; }
+body.dark-mode .a1-panel-cabecera { border-color: #333; }
+body.dark-mode .a1-lista li { border-color: #333; }
+body.dark-mode .a1-total { border-color: #fff; }
+
+/* Responsive */
 @media (max-width: 950px) {
   .a1-menu-btn { display: block; }
-  .a1-links { display: none; position: absolute; top: 70px; left: -4%; right: -4%; background: #fff; flex-direction: column; padding: 20px; gap: 16px; text-align: center; border-bottom: 1px solid var(--borde); }
+  .a1-links { display: none; position: absolute; top: 80px; left: -4%; right: -4%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); flex-direction: column; padding: 20px; gap: 16px; text-align: center; border-bottom: 1px solid var(--borde); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
   .a1-links.abierto { display: flex; }
   .a1-flecha { display: none; }
 }

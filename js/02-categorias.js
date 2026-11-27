@@ -1,7 +1,6 @@
 // ALUMNO 2 - Las tarjetas aparecen con animación cuando llegas a la sección
 (() => {
   const tarjetas = document.querySelectorAll('.a2-cat');
-
   const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(entrada => {
       if (entrada.isIntersecting) {
@@ -12,7 +11,7 @@
   }, { threshold: 0.2 });
 
   tarjetas.forEach((tarjeta, i) => {
-    tarjeta.style.transitionDelay = (i * 0.15) + 's'; // una después de otra
+    tarjeta.style.transitionDelay = (i * 0.2) + 's'; 
     observador.observe(tarjeta);
   });
 })();
