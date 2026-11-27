@@ -1,10 +1,10 @@
-// ALUMNO 5 - Filtros por edad, elegir color y agregar al carrito
+// ALUMNO 5 - Filtros por edad, elegir color, talla y agregar al carrito
 (() => {
   const seccion = document.getElementById('ninos');
   const filtros = seccion.querySelectorAll('.filtro');
   const productos = seccion.querySelectorAll('.producto');
 
-  // ---------- 1. Filtrar por edad ----------
+  // 1. Filtrar
   filtros.forEach(boton => {
     boton.addEventListener('click', () => {
       filtros.forEach(b => b.classList.remove('activo'));
@@ -16,7 +16,7 @@
     });
   });
 
-  // ---------- 2. Elegir color ----------
+  // 2. Elegir color
   productos.forEach(producto => {
     const bolitas = producto.querySelectorAll('.a5-color');
     const texto = producto.querySelector('.a5-color-texto');
@@ -25,14 +25,24 @@
       bolita.classList.add('activo');
       texto.textContent = 'Color: ' + bolita.dataset.color;
     }));
+
+    // 3. Elegir talla
+    const tallas = producto.querySelectorAll('.a5-talla');
+    tallas.forEach(t => t.addEventListener('click', () => {
+      tallas.forEach(x => x.classList.remove('activo'));
+      t.classList.add('activo');
+    }));
   });
 
-  // ---------- 3. Agregar al carrito con el color elegido ----------
+  // 4. Agregar al carrito con color + talla
   seccion.querySelectorAll('.btn-agregar').forEach(boton => {
     boton.addEventListener('click', () => {
       const producto = boton.closest('.producto');
       const color = producto.querySelector('.a5-color.activo');
-      const nombre = producto.dataset.nombre + (color ? ' - ' + color.dataset.color : '');
+      const talla = producto.querySelector('.a5-talla.activo');
+      let nombre = producto.dataset.nombre;
+      if (color) nombre += ' - ' + color.dataset.color;
+      if (talla) nombre += ' (Talla ' + talla.dataset.talla + ')';
       agregarAlCarrito(nombre, producto.dataset.precio);
     });
   });

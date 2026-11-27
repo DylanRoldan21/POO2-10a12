@@ -6,36 +6,29 @@
     <p class="subtitulo-seccion">Zapatillas, bolsos, gorras y relojes para completar tu estilo.</p>
 
     <div class="a6-barra">
-    <div class="filtros">
-      <button class="filtro activo" data-filtro="todo">Todo</button>
-      <button class="filtro" data-filtro="zapatillas">Zapatillas</button>
-      <button class="filtro" data-filtro="bolsos">Bolsos</button>
-      <button class="filtro" data-filtro="gorras">Gorras</button>
-      <button class="filtro" data-filtro="relojes">Relojes</button>
-    </div>
+      <div class="filtros">
+        <button class="filtro activo" data-filtro="todo">Todo</button>
+        <button class="filtro" data-filtro="zapatillas">Zapatillas</button>
+        <button class="filtro" data-filtro="bolsos">Bolsos</button>
+        <button class="filtro" data-filtro="gorras">Gorras</button>
+        <button class="filtro" data-filtro="relojes">Relojes</button>
+        <button class="filtro" data-filtro="lentes">Lentes de sol</button>
+      </div>
       <div class="a6-orden">
-        <span class="a6-cantidad" id="a6-cantidad">8 productos</span>
+        <span class="a6-cantidad" id="a6-cantidad">12 productos</span>
         <select id="a6-orden" aria-label="Ordenar productos">
           <option value="normal">Ordenar: destacados</option>
           <option value="menor">Precio: menor a mayor</option>
           <option value="mayor">Precio: mayor a menor</option>
+          <option value="nombre">Nombre A-Z</option>
         </select>
       </div>
     </div>
 
-    <!--
-      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
-        data-nombre   = nombre que se guarda en el carrito
-        data-precio   = precio SOLO con números y punto (ej: 49.90)
-        data-categoria= debe ser IGUAL al data-filtro de un botón de arriba
-      El nombre y el precio también se escriben en el texto visible (h3 y p).
-      Para agregar un producto: copia un <article> completo y pégalo debajo.
-    -->
-    <!-- data-orden = posición original (1, 2, 3...). Si agregas productos, sigue la numeración. -->
     <div class="grid-productos" id="a6-grid">
       <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Urbanas Blancas" data-precio="199.90" data-orden="1">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio1.svg" alt="Zapatillas Urbanas Blancas">
+          <img src="https://media.falabella.com/falabellaPE/882430169_01/w=1500,h=1500,fit=cover" alt="Zapatillas Urbanas Blancas">
           <span class="producto-etiqueta">NUEVO</span>
         </div>
         <div class="producto-info">
@@ -47,7 +40,7 @@
 
       <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Running" data-precio="229.90" data-orden="2">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio2.svg" alt="Zapatillas Running">
+          <img src="https://oechsle.vteximg.com.br/arquivos/ids/27260524-800-800/3025688_31.jpg?v=639263312803430000" alt="Zapatillas Running">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Zapatillas Running</h3>
@@ -58,7 +51,7 @@
 
       <article class="producto" data-categoria="bolsos" data-nombre="Bolso Tote de Cuero" data-precio="149.90" data-orden="3">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio3.svg" alt="Bolso Tote de Cuero">
+          <img src="https://mercury.vteximg.com.br/arquivos/ids/24284464/image-8acd31381ffd41728e72c24da7d307d6.jpg?v=639274945364500000" alt="Bolso Tote de Cuero">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Bolso Tote de Cuero</h3>
@@ -69,7 +62,7 @@
 
       <article class="producto" data-categoria="bolsos" data-nombre="Mochila Urbana" data-precio="119.90" data-orden="4">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio4.svg" alt="Mochila Urbana">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_769520-MLA100007255239_122025-O.webp" alt="Mochila Urbana">
           <span class="producto-etiqueta">TOP</span>
         </div>
         <div class="producto-info">
@@ -81,7 +74,7 @@
 
       <article class="producto" data-categoria="gorras" data-nombre="Gorra Snapback" data-precio="49.90" data-orden="5">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio5.svg" alt="Gorra Snapback">
+          <img src="https://assets.adidas.com/images/w_500,f_auto,q_auto/863e231028a540dc9fa9b46e7fa07f15_9366/GORRA_SNAPBACK_ADICOLOR_Beige_KC8065_00_plp_standard.jpg" alt="Gorra Snapback">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Gorra Snapback</h3>
@@ -92,7 +85,7 @@
 
       <article class="producto" data-categoria="gorras" data-nombre="Gorro de Lana" data-precio="39.90" data-orden="6">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio6.svg" alt="Gorro de Lana">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhEPioTKqZEAig_YSrxNWUBzNx4i00aGfUq9Sk2f0iF-GoGmYVSKTBsXQ&s=10" alt="Gorro de Lana">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Gorro de Lana</h3>
@@ -103,7 +96,7 @@
 
       <article class="producto" data-categoria="relojes" data-nombre="Reloj Clásico Plateado" data-precio="249.90" data-orden="7">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio7.svg" alt="Reloj Clásico Plateado">
+          <img src="https://invicta.com.pe/cdn/shop/files/886678348664_1600x.jpg?v=1718124942" alt="Reloj Clásico Plateado">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Reloj Clásico Plateado</h3>
@@ -114,11 +107,60 @@
 
       <article class="producto" data-categoria="relojes" data-nombre="Reloj Deportivo" data-precio="189.90" data-orden="8">
         <div class="producto-foto">
-          <img src="img/alumno6/accesorio8.svg" alt="Reloj Deportivo">
+          <img src="https://most.pe/cdn/shop/files/reloj_sanda_mujer_san-m-5_1.jpg?v=1746567300" alt="Reloj Deportivo">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Reloj Deportivo</h3>
           <p class="producto-precio">S/ 189.90</p>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- 9 NUEVO -->
+      <article class="producto" data-categoria="zapatillas" data-nombre="Zapatillas Skate" data-precio="179.90" data-orden="9">
+        <div class="producto-foto">
+          <img src="https://d3fvqmu2193zmz.cloudfront.net/items_2/uid_commerces.1/uid_items_2.FDLX9JT8FRQU/1500x1500/66CF45DB13E6B-Zapatilla-Walking-Hombre-Skate-Old-Skool.webp" alt="Zapatillas Skate">
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Zapatillas Skate</h3>
+          <p class="producto-precio">S/ 179.90</p>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- 10 NUEVO -->
+      <article class="producto" data-categoria="bolsos" data-nombre="Cartera Mini" data-precio="99.90" data-orden="10">
+        <div class="producto-foto">
+          <img src="https://media.falabella.com/falabellaPE/883809073_1/w=1500,h=1500,fit=cover" alt="Cartera Mini">
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Cartera Mini</h3>
+          <p class="producto-precio">S/ 99.90</p>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- 11 NUEVO -->
+      <article class="producto" data-categoria="lentes" data-nombre="Lentes de Sol Aviador" data-precio="89.90" data-orden="11">
+        <div class="producto-foto">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_667531-MLA110524703990_052026-O.webp" alt="Lentes de Sol Aviador">
+          <span class="producto-etiqueta">NUEVO</span>
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Lentes de Sol Aviador</h3>
+          <p class="producto-precio">S/ 89.90</p>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- 12 NUEVO -->
+      <article class="producto" data-categoria="lentes" data-nombre="Lentes de Sol Redondos" data-precio="79.90" data-orden="12">
+        <div class="producto-foto">
+          <img src="https://www.sevenseven.com/dw/image/v2/BHFM_PRD/on/demandware.static/-/Sites-storefront_catalog_sevenseven/default/dwe9b8c228/images/hi-res/Abril_2024/01_Abril/Gafas-para-mujer-28490210-9315_1.jpg?sw=800&sh=960" alt="Lentes de Sol Redondos">
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Lentes de Sol Redondos</h3>
+          <p class="producto-precio">S/ 79.90</p>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>

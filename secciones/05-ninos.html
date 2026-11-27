@@ -10,98 +10,220 @@
       <button class="filtro" data-filtro="bebe">Bebé (0-2 años)</button>
       <button class="filtro" data-filtro="nino">Niño</button>
       <button class="filtro" data-filtro="nina">Niña</button>
+      <button class="filtro" data-filtro="uniformes">Uniformes escolares</button>
     </div>
 
-    <!--
-      CÓMO EDITAR UN PRODUCTO (cada <article> es un producto):
-        data-nombre   = nombre que se guarda en el carrito
-        data-precio   = precio SOLO con números y punto (ej: 49.90)
-        data-categoria= debe ser IGUAL al data-filtro de un botón de arriba
-      El nombre y el precio también se escriben en el texto visible (h3 y p).
-      Para agregar un producto: copia un <article> completo y pégalo debajo.
-    -->
-    <!--
-      COLORES: cada bolita es un <button class="a5-color">
-        data-color = nombre del color que se muestra y va al carrito
-        style="background:#código" = color de la bolita
-    -->
     <div class="grid-productos">
+      <!-- 1 -->
       <article class="producto" data-categoria="bebe" data-nombre="Body de Algodón" data-precio="39.90">
         <div class="producto-foto">
-          <img src="img/alumno5/ninos1.svg" alt="Body de Algodón">
+          <img src="https://rimage.ripley.com.pe/home.ripley/Attachment/WOP/1/2033376904878/full_image-2033376904878.webp" alt="Body de Algodón">
           <span class="producto-etiqueta">NUEVO</span>
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Body de Algodón</h3>
           <p class="producto-precio">S/ 39.90</p>
-          <div class="a5-colores"><button class="a5-color activo" data-color="Blanco" style="background:#f5f5f5" aria-label="Blanco"></button><button class="a5-color" data-color="Celeste" style="background:#9cc9f0" aria-label="Celeste"></button><button class="a5-color" data-color="Rosado" style="background:#f3b3c8" aria-label="Rosado"></button></div>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Blanco" style="background:#f5f5f5" aria-label="Blanco"></button>
+            <button class="a5-color" data-color="Celeste" style="background:#9cc9f0" aria-label="Celeste"></button>
+            <button class="a5-color" data-color="Rosado" style="background:#f3b3c8" aria-label="Rosado"></button>
+          </div>
           <p class="a5-color-texto">Color: Blanco</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
 
+      <!-- 2 -->
       <article class="producto" data-categoria="bebe" data-nombre="Conjunto Osito" data-precio="59.90">
         <div class="producto-foto">
-          <img src="img/alumno5/ninos2.svg" alt="Conjunto Osito">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYLiKeYEIdhdJVOwus9hZy6HwkKHXydCtLhJh5LrKJW6ule0_AKCGR04g&s=10" alt="Conjunto Osito">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Conjunto Osito</h3>
           <p class="producto-precio">S/ 59.90</p>
-          <div class="a5-colores"><button class="a5-color activo" data-color="Beige" style="background:#e0cba8" aria-label="Beige"></button><button class="a5-color" data-color="Gris" style="background:#b5b5b5" aria-label="Gris"></button></div>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Beige" style="background:#e0cba8" aria-label="Beige"></button>
+            <button class="a5-color" data-color="Gris" style="background:#b5b5b5" aria-label="Gris"></button>
+          </div>
           <p class="a5-color-texto">Color: Beige</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
 
+      <!-- 3 -->
       <article class="producto" data-categoria="nino" data-nombre="Polo Dinosaurio" data-precio="34.90">
         <div class="producto-foto">
-          <img src="img/alumno5/ninos3.svg" alt="Polo Dinosaurio">
+          <img src="https://d3fvqmu2193zmz.cloudfront.net/items_2/uid_commerces.1/uid_items_2.2024100417030650115/1500x1500/69D6AF8A35660-Polo-Manga-Larga-Ni-o-Dinosaurios-Mco-0352-Al.webp" alt="Polo Dinosaurio">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Polo Dinosaurio</h3>
           <p class="producto-precio">S/ 34.90</p>
-          <div class="a5-colores"><button class="a5-color activo" data-color="Verde" style="background:#5fae7b" aria-label="Verde"></button><button class="a5-color" data-color="Azul" style="background:#3b6fd8" aria-label="Azul"></button><button class="a5-color" data-color="Amarillo" style="background:#f2c14e" aria-label="Amarillo"></button></div>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Verde" style="background:#5fae7b" aria-label="Verde"></button>
+            <button class="a5-color" data-color="Azul" style="background:#3b6fd8" aria-label="Azul"></button>
+            <button class="a5-color" data-color="Amarillo" style="background:#f2c14e" aria-label="Amarillo"></button>
+          </div>
           <p class="a5-color-texto">Color: Verde</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
 
+      <!-- 4 -->
       <article class="producto" data-categoria="nino" data-nombre="Short Deportivo" data-precio="39.90">
         <div class="producto-foto">
-          <img src="img/alumno5/ninos4.svg" alt="Short Deportivo">
+          <img src="https://rimage.ripley.com.pe/home.ripley/Attachment/WOP/1/2020371146631/full_image-2020371146631.webp" alt="Short Deportivo">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Short Deportivo</h3>
           <p class="producto-precio">S/ 39.90</p>
-          <div class="a5-colores"><button class="a5-color activo" data-color="Azul" style="background:#3b6fd8" aria-label="Azul"></button><button class="a5-color" data-color="Negro" style="background:#222222" aria-label="Negro"></button></div>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Azul" style="background:#3b6fd8" aria-label="Azul"></button>
+            <button class="a5-color" data-color="Negro" style="background:#222222" aria-label="Negro"></button>
+          </div>
           <p class="a5-color-texto">Color: Azul</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
 
+      <!-- 5 -->
       <article class="producto" data-categoria="nina" data-nombre="Vestido Mariposa" data-precio="69.90">
         <div class="producto-foto">
-          <img src="img/alumno5/ninos5.svg" alt="Vestido Mariposa">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw6Zf9j6CA3D_vFeC-nWvWkTrfNfm4GiIf93VlqEO8imbrWt0GhQPnr-Kf&s=10" alt="Vestido Mariposa">
           <span class="producto-etiqueta">TOP</span>
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Vestido Mariposa</h3>
           <p class="producto-precio">S/ 69.90</p>
-          <div class="a5-colores"><button class="a5-color activo" data-color="Lila" style="background:#b79ce0" aria-label="Lila"></button><button class="a5-color" data-color="Rosado" style="background:#f3b3c8" aria-label="Rosado"></button></div>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Lila" style="background:#b79ce0" aria-label="Lila"></button>
+            <button class="a5-color" data-color="Rosado" style="background:#f3b3c8" aria-label="Rosado"></button>
+          </div>
           <p class="a5-color-texto">Color: Lila</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
 
+      <!-- 6 -->
       <article class="producto" data-categoria="nina" data-nombre="Casaca Acolchada" data-precio="89.90">
         <div class="producto-foto">
-          <img src="img/alumno5/ninos6.svg" alt="Casaca Acolchada">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy6JdzGNgSQk_0lkzqxhx08uVOtUZ8YRI7iueGIpwefw&s" alt="Casaca Acolchada">
         </div>
         <div class="producto-info">
           <h3 class="producto-nombre">Casaca Acolchada</h3>
           <p class="producto-precio">S/ 89.90</p>
-          <div class="a5-colores"><button class="a5-color activo" data-color="Rosado" style="background:#f3b3c8" aria-label="Rosado"></button><button class="a5-color" data-color="Rojo" style="background:#d64545" aria-label="Rojo"></button><button class="a5-color" data-color="Blanco" style="background:#f5f5f5" aria-label="Blanco"></button></div>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Rosado" style="background:#f3b3c8" aria-label="Rosado"></button>
+            <button class="a5-color" data-color="Rojo" style="background:#d64545" aria-label="Rojo"></button>
+            <button class="a5-color" data-color="Blanco" style="background:#f5f5f5" aria-label="Blanco"></button>
+          </div>
           <p class="a5-color-texto">Color: Rosado</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- 7 NUEVO -->
+      <article class="producto" data-categoria="uniformes" data-nombre="Polo Escolar" data-precio="29.90">
+        <div class="producto-foto">
+          <img src="https://image.made-in-china.com/202f0j00hrZROSCMScoB/Children-Blank-School-Uniform-Polo-Shirt-Boys-Cotton-Short-Sleeve-T-Shirt-Baby-Embroidery-Plain-Apparel.webp" alt="Polo Escolar">
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Polo Escolar</h3>
+          <p class="producto-precio">S/ 29.90</p>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Blanco" style="background:#f5f5f5" aria-label="Blanco"></button>
+            <button class="a5-color" data-color="Celeste" style="background:#9cc9f0" aria-label="Celeste"></button>
+          </div>
+          <p class="a5-color-texto">Color: Blanco</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- 8 NUEVO -->
+      <article class="producto" data-categoria="uniformes" data-nombre="Falda Escolar Tableada" data-precio="49.90">
+        <div class="producto-foto">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_645340-MLM109547480601_032026-O.webp" alt="Falda Escolar Tableada">
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Falda Escolar Tableada</h3>
+          <p class="producto-precio">S/ 49.90</p>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Azul marino" style="background:#2b3a67" aria-label="Azul marino"></button>
+            <button class="a5-color" data-color="Gris" style="background:#b5b5b5" aria-label="Gris"></button>
+          </div>
+          <p class="a5-color-texto">Color: Azul marino</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
+          <button class="btn-agregar">Agregar al carrito</button>
+        </div>
+      </article>
+
+      <!-- 9 NUEVO -->
+      <article class="producto" data-categoria="nino" data-nombre="Buzo con Capucha" data-precio="69.90">
+        <div class="producto-foto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_hH2NVjP8bTYz-3-8HtWtrVxmBaoeJCXP3fsVeMWae34-4uLuhN9fEKy_&s=10" alt="Buzo con Capucha">
+          <span class="producto-etiqueta">TOP</span>
+        </div>
+        <div class="producto-info">
+          <h3 class="producto-nombre">Buzo con Capucha</h3>
+          <p class="producto-precio">S/ 69.90</p>
+          <div class="a5-colores">
+            <button class="a5-color activo" data-color="Gris" style="background:#b5b5b5" aria-label="Gris"></button>
+            <button class="a5-color" data-color="Rojo" style="background:#d64545" aria-label="Rojo"></button>
+            <button class="a5-color" data-color="Verde" style="background:#5fae7b" aria-label="Verde"></button>
+          </div>
+          <p class="a5-color-texto">Color: Gris</p>
+          <div class="a5-tallas">
+            <button class="a5-talla activo" data-talla="2">2</button>
+            <button class="a5-talla" data-talla="4">4</button>
+            <button class="a5-talla" data-talla="6">6</button>
+            <button class="a5-talla" data-talla="8">8</button>
+          </div>
           <button class="btn-agregar">Agregar al carrito</button>
         </div>
       </article>
